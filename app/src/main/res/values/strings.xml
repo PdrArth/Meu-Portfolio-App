@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MeuPotifolio</string>
+    <string name="projetos">Projetos</string>
+    <string name="contato">Contato</string>
+    <string name="sobre_mim">
+
+        <L>Desenvolvedor Android</L> com mais de um ano de experiência no desenvolvimento de aplicativos nativos utilizando <b>Kotlin</b> e <b>Java</b>. Ao longo da minha trajetória profissional, venho me especializando em boas práticas de arquitetura, performance e escalabilidade, sempre focando na criação de soluções robustas e eficientes. Meu trabalho é voltado para a criação de aplicativos que não só atendem aos requisitos funcionais, mas também oferecem uma excelente experiência de uso, com ênfase em código limpo, modular e de fácil manutenção.\n\n
+
+        Tenho ampla experiência com <b>Jetpack Compose</b> para a criação de interfaces modernas e dinâmicas, além de utilizar <b>XML</b> quando necessário para garantir flexibilidade total no design e customização das aplicações. Meu trabalho com design também se estende ao uso de <b>Figma</b>, ferramenta com a qual colaboro com equipes de design para criar interfaces intuitivas, além de realizar prototipação de soluções de forma eficaz.\n\n
+
+        Atualmente, estou me aprofundando em <b>Kotlin Multiplatform (KMP)</b>, que possibilita o desenvolvimento de soluções multiplataforma eficientes, permitindo que um único código seja executado tanto em Android quanto iOS, promovendo maior produtividade e redução do tempo de desenvolvimento. Estou sempre atento às últimas tendências do ecossistema Android e busco constantemente aprender novas tecnologias e metodologias que possam otimizar o processo de desenvolvimento e melhorar a qualidade do código.\n\n
+
+        Acredito em criar soluções escaláveis, de alta performance e com foco na experiência do usuário. Tenho experiência no uso de ferramentas como <b>Retrofit</b> para integração com APIs, <b>Room</b> para armazenamento local, <b>Firebase</b> para autenticação e sincronização de dados em tempo real, e <b>Git</b> e <b>GitHub</b> para versionamento e controle colaborativo de código. Essas ferramentas me permitem entregar produtos mais robustos e prontos para escalar conforme as necessidades do projeto.\n\n
+
+        Busco sempre me aprimorar, seja aprendendo novas abordagens e ferramentas ou otimizando os processos de desenvolvimento e a qualidade do código. Meu objetivo é sempre entregar soluções práticas, inovadoras e que atendam às necessidades do usuário final, com foco na eficiência e qualidade do produto.\n\n
+
+        <b>Habilidades Técnicas:</b>\n
+        Kotlin | Java | Kotlin Multiplatform (KMP) | Jetpack Compose | XML | Firebase | Retrofit | Room | Git | GitHub | UI/UX | Figma | MVVM | Dependency Injection | Testes Unitários | Coroutines\n\n
+
+        <b>Idiomas:</b>\n
+        <b>Inglês:</b> Intermediário - Capacidade de ler e entender documentações técnicas e tutoriais em inglês.\n
+        <b>Espanhol:</b> Básico - Capacidade de comunicação em tarefas cotidianas e técnicas, com algum esforço para me expressar com clareza e melhorar minhas habilidades.\n\n
+
+        <b>Experiência Profissional:</b>\n
+        Ao longo da minha carreira, trabalhei em diversos projetos, desde a implementação de funcionalidades novas até a manutenção de sistemas existentes. Sempre com foco em soluções escaláveis e sustentáveis, com integração de APIs e ênfase em facilitar o processo de manutenção e evolução dos sistemas. Utilizo metodologias ágeis para garantir entregas dentro do prazo e com alta qualidade, além de colaborar de forma eficiente com equipes multifuncionais para alcançar os objetivos do projeto.\n\n
+
+        Estou sempre à procura de novos desafios e oportunidades que me permitam crescer profissionalmente. Busco contribuir para a criação de soluções inovadoras e de alta qualidade, mantendo sempre a experiência do usuário como prioridade e aplicando as melhores práticas de desenvolvimento.
+
+    </string>
+
+
+</resources>
