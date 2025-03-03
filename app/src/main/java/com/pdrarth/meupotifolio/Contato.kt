@@ -44,6 +44,9 @@ class Contato : AppCompatActivity() {
         }
     }
 
+
+
+
     private fun enviarEmail() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:") // Garante que só apps de e-mail abram
