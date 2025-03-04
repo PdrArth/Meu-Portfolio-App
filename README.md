@@ -11,7 +11,7 @@ Um Portfólio aonde organizado informações de projetos e de contato em telas s
 
 ## Autores
 
-- [@octokatherine](https://www.github.com/pdrarth)
+- [@odrarth](https://www.github.com/pdrarth)
 
 
 ## Screenshots
