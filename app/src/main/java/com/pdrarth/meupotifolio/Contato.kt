@@ -2,11 +2,14 @@ package com.pdrarth.meupotifolio
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.pdrarth.meupotifolio.databinding.ActivityContatoBinding
 import com.pdrarth.meupotifolio.databinding.ActivityMainBinding
@@ -17,12 +20,20 @@ import java.net.URL
 private lateinit var binding: ActivityContatoBinding
 
 class Contato : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityContatoBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
         // Muda a cor da Status Bar para a mesma cor da Toolbar
-        window.statusBarColor = ContextCompat.getColor(this, R.color.blue)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        binding.root.setOnApplyWindowInsetsListener { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(0, systemBars.top, 0, 0)
+            insets
+        }
+
 
         var linkgit = binding.linkgithub
         var linklinkdin = binding.linklinkedin
