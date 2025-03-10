@@ -28,11 +28,7 @@ class Contato : AppCompatActivity() {
         setContentView(binding.root)
         // Muda a cor da Status Bar para a mesma cor da Toolbar
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        binding.root.setOnApplyWindowInsetsListener { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(0, systemBars.top, 0, 0)
-            insets
-        }
+      
 
 
         var linkgit = binding.linkgithub

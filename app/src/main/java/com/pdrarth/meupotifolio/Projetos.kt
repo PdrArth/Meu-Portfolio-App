@@ -24,11 +24,6 @@ class Projetos : AppCompatActivity() {
         binding = ActivityProjetosBinding.inflate(layoutInflater)
         setContentView(binding.root)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        binding.root.setOnApplyWindowInsetsListener { view, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(0, systemBars.top, 0, 0)
-            insets
-        }
         val tollbar = binding.toolbarProjetos12
         tollbar.setNavigationOnClickListener {
             finish()
@@ -36,8 +31,11 @@ class Projetos : AppCompatActivity() {
         var projetodeliviry = binding.btnVerProjeto1
         var projetosistematcc = binding.btnVerProjeto2
         var projetoclimatempo = binding.btnVerProjeto3
+        var projetocep = binding.btnVerProjeteocep
 
-
+        projetocep.setOnClickListener {
+            urlProjetos("https://github.com/PdrArth/ConsultaCEP")
+        }
         projetodeliviry.setOnClickListener {
             urlProjetos("https://github.com/PdrArth/App-Delivery-")
 
