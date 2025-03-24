@@ -32,6 +32,11 @@ class Projetos : AppCompatActivity() {
         var projetosistematcc = binding.btnVerProjeto2
         var projetoclimatempo = binding.btnVerProjeto3
         var projetocep = binding.btnVerProjeteocep
+        var projetomovies = binding.btnVerProjetomoves
+
+     projetomovies.setOnClickListener {
+         urlProjetos("https://github.com/PdrArth/ArthMovies")
+     }
 
         projetocep.setOnClickListener {
             urlProjetos("https://github.com/PdrArth/ConsultaCEP")

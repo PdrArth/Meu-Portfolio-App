@@ -28,12 +28,12 @@ class Contato : AppCompatActivity() {
         setContentView(binding.root)
         // Muda a cor da Status Bar para a mesma cor da Toolbar
         WindowCompat.setDecorFitsSystemWindows(window, false)
-      
 
 
-        var linkgit = binding.linkgithub
-        var linklinkdin = binding.linklinkedin
-        var email = binding.email
+
+        var linkgit = binding.cardgithub
+        var linklinkdin = binding.cardLinkedin
+        var email = binding.cardEmail
 
         val tollbar = binding.toolbarContato
             tollbar.setNavigationOnClickListener {

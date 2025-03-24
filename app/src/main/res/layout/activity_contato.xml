@@ -1,91 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
     tools:context=".Contato">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_contato"
+    <!-- AppBar com MaterialToolbar e efeito de elevação -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_contato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/return_back_24"
-        app:title="Contato"
-        app:titleTextColor="@color/white"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/white"
+        app:elevation="0dp">
 
-    <ImageView
-        android:id="@+id/github"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="26dp"
-        android:src="@drawable/github"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_contato" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_contato"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue"
+            app:navigationIcon="@drawable/return_back_24"
+            app:title="Entre em Contato"
+            app:titleTextColor="@android:color/white" />
 
-    <TextView
-        android:id="@+id/linkgithub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:gravity="center"
-        android:text="https://github.com/PdrArth"
-        android:textColor="@color/blue"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/github"
-        app:layout_constraintStart_toEndOf="@+id/github"
-        app:layout_constraintTop_toTopOf="@+id/github" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/linklinkedin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="https://www.linkedin.com/in/pdrarth"
-        android:textColor="@color/blue"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.58"
-        tools:ignore="MissingConstraints" />
+    <!-- Conteúdo principal -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/linkedin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/github" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
+            <!-- Texto de introdução -->
+            <TextView
+                android:id="@+id/contact_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Vamos conversar! Escolha uma das opções abaixo para entrar em contato:"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/email"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/baseline_email_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_contato"
-        app:layout_constraintVertical_bias="0.842" />
+            <!-- GitHub Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_github"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/contact_intro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/cardgithub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/github"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/github"
+                        android:contentDescription="GitHub logo"
+                        android:padding="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GitHub"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/linkgithub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="https://github.com/PdrArth"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp"
+                            android:ellipsize="end"
+                            android:maxLines="1" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Ir para GitHub"
+                       />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- LinkedIn Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_linkedin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/card_github"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/linkedin"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/linkedin"
+                        android:contentDescription="LinkedIn logo"
+                        android:padding="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LinkedIn"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/linklinkedin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="https://www.linkedin.com/in/pdrarth"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp"
+                            android:ellipsize="end"
+                            android:maxLines="1" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Ir para LinkedIn"
+                         />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Email Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/card_linkedin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/email"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/baseline_email_24"
+                        android:contentDescription="Email icon"
+                        android:padding="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/email_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="contact@pdrarth.com"
+                            android:textColor="@color/blue"
+                            android:textSize="14sp"
+                            android:ellipsize="end"
+                            android:maxLines="1" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Enviar email"
+                       />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Formulário de Contato -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
