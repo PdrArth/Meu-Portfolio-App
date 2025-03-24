@@ -16,9 +16,13 @@ Um Portfólio aonde organizado informações de projetos e de contato em telas s
 
 ## Screenshots
 
+![Tela Inicial ](https://github.com/PdrArth/Meu-Portfolio-App/blob/main/telainicial.JPG)
+
+
 ![Tela Projetos](https://github.com/PdrArth/Meu-Portfolio-App/blob/main/projetos.JPG)
 
-![Tela Contatos](https://github.com/PdrArth/Meu-Portfolio-App/blob/main/contatos.JPG)
+
+![Tela Contatos](https://github.com/PdrArth/Meu-Portfolio-App/blob/main/teladecontato.JPG)
 
 
 
