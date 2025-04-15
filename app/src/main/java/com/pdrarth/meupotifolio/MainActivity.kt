@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         var contact = binding.contatos
 
 
+
+
         projetc.setOnClickListener {
             var intent =  Intent(this, Projetos::class.java)
             startActivity(intent)

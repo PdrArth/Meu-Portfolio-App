@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_Projetos12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue"
-        android:layout_marginTop="43dp"
-        app:navigationIcon="@drawable/return_back_24"
-        app:title="Projetos"
-        app:titleTextColor="@color/white"
-        tools:ignore="MissingConstraints" >
-    </androidx.appcompat.widget.Toolbar>
-
 
 
     <LinearLayout
@@ -70,10 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="ArthMovies é um aplicativo Android para explorar filmes, exibindo capas e detalhes sobre o elenco, proporcionando uma experiência fluida e moderna com Material Design.
-
-"/>
-
+                            android:text="ArthMovies é um aplicativo Android para explorar filmes, exibindo capas e detalhes sobre o elenco, proporcionando uma experiência fluida e moderna com Material Design."/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -117,7 +102,6 @@
                                 android:padding="6dp"
                                 android:text="Materal Desing" />
                         </LinearLayout>
-
                         <Button
                             android:id="@+id/btn_ver_projetomoves"
                             android:layout_width="match_parent"

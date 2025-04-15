@@ -8,24 +8,6 @@
     android:background="@color/white"
     tools:context=".Contato">
 
-    <!-- AppBar com MaterialToolbar e efeito de elevação -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_contato"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:elevation="0dp">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar_contato"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/blue"
-            app:navigationIcon="@drawable/return_back_24"
-            app:title="Entre em Contato"
-            app:titleTextColor="@android:color/white" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Conteúdo principal -->
     <androidx.core.widget.NestedScrollView
@@ -236,7 +218,7 @@
                             android:id="@+id/email_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="contact@pdrarth.com"
+                            android:text="pedroarthurpdrarth@gmail.com"
                             android:textColor="@color/blue"
                             android:textSize="14sp"
                             android:ellipsize="end"
