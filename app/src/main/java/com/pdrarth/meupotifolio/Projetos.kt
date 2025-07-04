@@ -1,50 +1,62 @@
 package com.pdrarth.meupotifolio
 
-import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import com.pdrarth.meupotifolio.databinding.ActivityProjetosBinding
-
-
-private lateinit var binding: ActivityProjetosBinding
+import com.pdrarth.meupotifolio.utils.IntentUtils
 
 class Projetos : AppCompatActivity() {
-    @RequiresApi(Build.VERSION_CODES.R)
+    
+    private lateinit var binding: ActivityProjetosBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProjetosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        var projetodeliviry = binding.btnVerProjeto1
-        var projetosistematcc = binding.btnVerProjeto2
-        var projetoclimatempo = binding.btnVerProjeto3
-        var projetocep = binding.btnVerProjeteocep
-        var projetomovies = binding.btnVerProjetomoves
-
-     projetomovies.setOnClickListener {
-         urlProjetos("https://github.com/PdrArth/ArthMovies")
-     }
-        projetocep.setOnClickListener {
-            urlProjetos("https://github.com/PdrArth/ConsultaCEP")
+        
+        setupToolbar()
+        setupClickListeners()
+    }
+    
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
+    
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+    
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_in_right)
+    }
+    
+    private fun setupClickListeners() {
+        binding.btnVerProjetomoves.setOnClickListener {
+            openProjectUrl(Constants.PROJECT_ARTH_MOVIES)
         }
-        projetodeliviry.setOnClickListener {
-            urlProjetos("https://github.com/PdrArth/App-Delivery-")
+        
+        binding.btnVerProjeteocep.setOnClickListener {
+            openProjectUrl(Constants.PROJECT_CEP)
         }
-
-        projetosistematcc.setOnClickListener {
-            urlProjetos("https://github.com/PdrArth/Agendamento-TCC")
+        
+        binding.btnVerProjeto1.setOnClickListener {
+            openProjectUrl(Constants.PROJECT_DELIVERY)
         }
-        projetoclimatempo.setOnClickListener {
-            urlProjetos("https://github.com/luizmiguelrosa/ClimaTempo-ADS100")
+        
+        binding.btnVerProjeto2.setOnClickListener {
+            openProjectUrl(Constants.PROJECT_TCC)
+        }
+        
+        binding.btnVerProjeto3.setOnClickListener {
+            openProjectUrl(Constants.PROJECT_CLIMA_TEMPO)
         }
     }
-    private fun urlProjetos(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(intent)
-
+    
+    private fun openProjectUrl(url: String) {
+        IntentUtils.openUrl(this, url)
     }
 }

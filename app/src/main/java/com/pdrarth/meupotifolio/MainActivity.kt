@@ -2,35 +2,34 @@ package com.pdrarth.meupotifolio
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.pdrarth.meupotifolio.databinding.ActivityMainBinding
 
-private lateinit var binding: ActivityMainBinding
-
 class MainActivity : AppCompatActivity() {
+    
+    private lateinit var binding: ActivityMainBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        var projetc = binding.projetos
-        var contact = binding.contatos
-
-
-
-
-        projetc.setOnClickListener {
-            var intent =  Intent(this, Projetos::class.java)
-            startActivity(intent)
-
-
+        
+        setupClickListeners()
+    }
+    
+    private fun setupClickListeners() {
+        binding.projetos.setOnClickListener {
+            navigateToActivity(Projetos::class.java)
         }
-        contact.setOnClickListener {
-            var intent =  Intent(this, Contato::class.java)
-            startActivity(intent)
+        
+        binding.contatos.setOnClickListener {
+            navigateToActivity(Contato::class.java)
         }
+    }
+    
+    private fun navigateToActivity(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
+        startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_right, R.anim.fade_in)
     }
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo para botões principais -->
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="rippleColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <!-- Estilo para cards de projeto -->
+    <style name="ProjectCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <!-- Estilo para cards de contato -->
+    <style name="ContactCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/blue</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="rippleColor">@color/blue</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Estilo para títulos de projeto -->
+    <style name="ProjectTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <!-- Estilo para descrições de projeto -->
+    <style name="ProjectDescription" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <!-- Estilo para tags de tecnologia -->
+    <style name="TechTag" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:background">@drawable/tech_tag_background</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+</resources> 

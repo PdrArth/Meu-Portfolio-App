@@ -1,60 +1,50 @@
 package com.pdrarth.meupotifolio
 
-import android.annotation.SuppressLint
-import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import com.pdrarth.meupotifolio.databinding.ActivityContatoBinding
-
-
-
-private lateinit var binding: ActivityContatoBinding
+import com.pdrarth.meupotifolio.utils.IntentUtils
 
 class Contato : AppCompatActivity() {
-    @SuppressLint("SuspiciousIndentation")
-    @RequiresApi(Build.VERSION_CODES.R)
+    
+    private lateinit var binding: ActivityContatoBinding
+    
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityContatoBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        binding = ActivityContatoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Muda a cor da Status Bar para a mesma cor da Toolbar
-        var linkgit = binding.cardgithub
-        var linklinkdin = binding.cardLinkedin
-        var email = binding.cardEmail
-
-        linkgit.setOnClickListener {
-            abrirLink("https://github.com/PdrArth")
-        }
-        linklinkdin.setOnClickListener {
-            abrirLink("https://www.linkedin.com/in/pdrarth/")
-        }
-
-        email.setOnClickListener {
-            enviarEmail()
-        }
+        
+        setupToolbar()
+        setupClickListeners()
     }
-
-    private fun enviarEmail() {
-        val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:") // Garante que só apps de e-mail abram
-            putExtra(Intent.EXTRA_EMAIL, arrayOf("pedroarthurpdrarth@gmail.com")) // Seu e-mail
-            putExtra(Intent.EXTRA_SUBJECT, "Contato via Portfólio") // Assunto padrão
-        }
-
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        }
+    
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
-
-    private fun abrirLink(url: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        startActivity(intent)
-
+    
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+    
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.slide_in_right)
+    }
+    
+    private fun setupClickListeners() {
+        binding.cardgithub.setOnClickListener {
+            IntentUtils.openUrl(this, Constants.GITHUB_URL)
+        }
+        
+        binding.cardLinkedin.setOnClickListener {
+            IntentUtils.openUrl(this, Constants.LINKEDIN_URL)
+        }
+        
+        binding.cardEmail.setOnClickListener {
+            IntentUtils.sendEmail(this, Constants.EMAIL_ADDRESS, Constants.EMAIL_SUBJECT)
+        }
     }
 }

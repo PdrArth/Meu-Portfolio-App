@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Meus Projetos"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
 
     <LinearLayout
@@ -102,13 +119,17 @@
                                 android:padding="6dp"
                                 android:text="Materal Desing" />
                         </LinearLayout>
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_ver_projetomoves"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/blue"
-                            android:text="Ver Projeto" />
+                            android:text="Ver Projeto"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="@color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <!-- Projeto novo -->
@@ -181,13 +202,17 @@
                                 android:text="Retrofit" />
                         </LinearLayout>
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_ver_projeteocep"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/blue"
-                            android:text="Ver Projeto" />
+                            android:text="Ver Projeto"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="@color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -261,13 +286,17 @@
                                 android:text="Firebase" />
                         </LinearLayout>
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_ver_projeto1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/blue"
-                            android:text="Ver Projeto" />
+                            android:text="Ver Projeto"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="@color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -327,13 +356,17 @@
                                 android:text="Java" />
                         </LinearLayout>
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_ver_projeto2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/blue"
-                            android:text="Ver Projeto" />
+                            android:text="Ver Projeto"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="@color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -407,13 +440,17 @@
                                 android:text="Java" />
                         </LinearLayout>
 
-                        <Button
+                        <com.google.android.material.button.MaterialButton
                             android:id="@+id/btn_ver_projeto3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:backgroundTint="@color/blue"
-                            android:text="Ver Projeto" />
+                            android:text="Ver Projeto"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="@color/white" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
